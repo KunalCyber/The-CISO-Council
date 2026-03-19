@@ -143,7 +143,7 @@ For serious decision support, use frontier models. The quality of deliberation i
 | James Okafor | Anthropic | `claude-sonnet-4.6` | Fast, high-quality, cost-effective |
 | Elena Voronova | xAI | `grok-3` | Independent reasoning, contrarian perspectives |
 | Dr. Nakamura | OpenAI | `o3` | Superior reasoning for complex governance questions |
-| **Scoring Model** | Google | `gemini-2.5-flash` | Fast, accurate scoring at low cost |
+| **Scoring Model** | Anthropic | `claude-sonnet-4.6` | Fast, accurate scoring at low cost |
 
 ### Free Tier Setup (Getting Started)
 
