@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/screenshots/landing-page.png" alt="The CISO Council War Room" width="900">
+  <img src="https://raw.githubusercontent.com/KunalCyber/The-CISO-Council/main/static/council-hero.png" alt="The CISO Council" width="800">
 </p>
 
 <h1 align="center">The CISO Council</h1>
@@ -22,16 +22,14 @@
   <a href="#the-council">The Council</a> &bull;
   <a href="#recommended-models">Models</a> &bull;
   <a href="#security">Security</a> &bull;
-  <a href="https://www.linkedin.com/in/kunal-rk-a255aa301">Connect on LinkedIn</a>
+  <a href="https://www.linkedin.com/in/kunal-rk-a255aa301">LinkedIn</a>
 </p>
 
 ---
 
-## The Idea
+## How It Works
 
 Instead of asking a security question to your favourite LLM, you assemble a **council of six AI models**, each embodying a distinct cybersecurity leadership persona with their own risk appetite, organisational context, and regulatory lens. Your query goes to all six independently, a scoring engine evaluates each response across five dimensions, and a **Chief Arbiter** synthesises the final verdict.
-
-Here is what happens when you submit a scenario:
 
 **Stage 1: Independent Deliberation.** Your cybersecurity dilemma is given to all 6 council members individually. Each responds from their persona's perspective: a startup CISO reasons differently from a bank CRO, a DPO prioritises differently from a Head of Internal Audit.
 
@@ -47,24 +45,26 @@ Here is what happens when you submit a scenario:
 
 ## The War Room
 
-The CISO Council runs as a local web application with a dark, command-centre-style interface. Select a pre-built scenario or type your own cybersecurity dilemma, hit "Convene Council", and watch six AI security leaders deliberate in real time.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/KunalCyber/The-CISO-Council/main/docs/screenshots/war-room.png" alt="The CISO Council War Room" width="900">
+</p>
 
-<p align="center"><em>Run it locally to experience the full War Room interface.</em></p>
+The CISO Council runs as a local web application with a dark, command-centre-style interface. Select a pre-built scenario or type your own cybersecurity dilemma, hit "Convene Council", and watch six AI security leaders deliberate in real time.
 
 ### Features
 
 | Feature | Description |
 |:---|:---|
-| **6 AI Personas** | Each with distinct risk appetite, org context, and regulatory lens |
-| **Multi-Model** | Uses different AI models from different providers for genuine diversity |
-| **5-Dimension Scoring** | Regulatory Defensibility, Practicality, Board-Readiness, Specificity, Risk Quantification |
-| **Chief Arbiter** | Independent model synthesises the final verdict from all responses |
-| **Consensus/Dissent** | Identifies where the council agrees and where they split |
-| **Ambiguity Analysis** | Reveals what disagreements tell you about the decision's complexity |
-| **Custom Scenarios** | Type any cybersecurity dilemma directly into the War Room |
-| **PDF Export** | Board-ready report with full deliberation, scores, and recommendations |
-| **Zero Cost** | Runs entirely on free-tier API keys |
-| **Fully Local** | Nothing leaves your machine except API calls to your configured providers |
+| 🎭 **6 AI Personas** | Each with distinct risk appetite, org context, and regulatory lens |
+| 🤖 **Multi-Model** | Uses different AI models from different providers for genuine diversity |
+| 📊 **5-Dimension Scoring** | Regulatory Defensibility, Practicality, Board-Readiness, Specificity, Risk Quantification |
+| ⚖️ **Chief Arbiter** | Independent model synthesises the final verdict from all responses |
+| 🤝 **Consensus/Dissent** | Identifies where the council agrees and where they split |
+| 🔍 **Ambiguity Analysis** | Reveals what disagreements tell you about the decision's complexity |
+| ✍️ **Custom Scenarios** | Type any cybersecurity dilemma directly into the War Room |
+| 📄 **PDF Export** | Board-ready report with full deliberation, scores, and recommendations |
+| 💰 **Zero Cost** | Runs entirely on free-tier API keys |
+| 🔒 **Fully Local** | Nothing leaves your machine except API calls to your configured providers |
 
 ---
 
@@ -74,12 +74,12 @@ Six personas, each with a different risk appetite, organisational context, and d
 
 | | Name | Role | Sector | Risk Appetite | Regulatory Focus |
 |:---:|:---|:---|:---|:---|:---|
-| :purple_circle: | **Divya Sharma** | CISO | Fintech Startup | :red_square::red_square::red_square::red_square::white_large_square: Tolerant | SOC 2, PCI DSS, GDPR, DPDP |
-| :green_circle: | **Marcus Chen** | Data Protection Officer | Healthtech | :green_square::green_square::white_large_square::white_large_square::white_large_square: Conservative | GDPR, EU AI Act, NIS2, ISO 27701 |
-| :large_blue_circle: | **Sarah Al-Rashid** | Chief Risk Officer | Banking | :green_square::white_large_square::white_large_square::white_large_square::white_large_square: Ultra-Conservative | Basel III, DORA, SOX, ISO 31000 |
-| :yellow_circle: | **James Okafor** | Head of Internal Audit | Manufacturing | :orange_square::orange_square::orange_square::white_large_square::white_large_square: Moderate | ISO 27001, NIST CSF, SOC 2, COBIT |
-| :white_circle: | **Elena Voronova** | CISO | Enterprise SaaS | :orange_square::orange_square::orange_square::white_large_square::white_large_square: Moderate | SOC 2, ISO 27001, FedRAMP, NIST 800-53 |
-| :red_circle: | **Dr. Tomoko Nakamura** | Head of AI Governance | Technology | :green_square::green_square::white_large_square::white_large_square::white_large_square: Conservative | EU AI Act, ISO 42001, NIST AI RMF |
+| 🟣 | **Divya Sharma** | CISO | Fintech Startup | 🟥🟥🟥🟥⬜ Tolerant | SOC 2, PCI DSS, GDPR, DPDP |
+| 🟢 | **Marcus Chen** | Data Protection Officer | Healthtech | 🟩🟩⬜⬜⬜ Conservative | GDPR, EU AI Act, NIS2, ISO 27701 |
+| 🔵 | **Sarah Al-Rashid** | Chief Risk Officer | Banking | 🟩⬜⬜⬜⬜ Ultra-Conservative | Basel III, DORA, SOX, ISO 31000 |
+| 🟡 | **James Okafor** | Head of Internal Audit | Manufacturing | 🟧🟧🟧⬜⬜ Moderate | ISO 27001, NIST CSF, SOC 2, COBIT |
+| ⚪ | **Elena Voronova** | CISO | Enterprise SaaS | 🟧🟧🟧⬜⬜ Moderate | SOC 2, ISO 27001, FedRAMP, NIST 800-53 |
+| 🔴 | **Dr. Tomoko Nakamura** | Head of AI Governance | Technology | 🟩🟩⬜⬜⬜ Conservative | EU AI Act, ISO 42001, NIST AI RMF |
 
 ---
 
@@ -105,12 +105,12 @@ pip install -r requirements.txt
 
 | Provider | Free Tier | Get Your Key |
 |:---|:---|:---|
-| **Google AI Studio** | ~500 requests/day | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
-| **Groq** | 14,400 requests/day | [console.groq.com/keys](https://console.groq.com/keys) |
-| **Mistral** | 1B tokens/month | [console.mistral.ai/api-keys](https://console.mistral.ai/api-keys) |
-| **Cerebras** | Generous free tier | [cloud.cerebras.ai](https://cloud.cerebras.ai) |
+| 🔷 **Google AI Studio** | ~500 requests/day | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
+| ⚡ **Groq** | 14,400 requests/day | [console.groq.com/keys](https://console.groq.com/keys) |
+| 🔶 **Mistral** | 1B tokens/month | [console.mistral.ai/api-keys](https://console.mistral.ai/api-keys) |
+| 🧠 **Cerebras** | Generous free tier | [cloud.cerebras.ai](https://cloud.cerebras.ai) |
 
-> You only need **2 providers minimum** to run a council session. Start with Google and Groq.
+> **You only need 2 providers minimum** to run a council session. Start with Google and Groq.
 
 ### 4. Configure
 
@@ -125,13 +125,13 @@ cp config.yaml.example config.yaml
 python -m council serve
 ```
 
-Open **http://localhost:8000** in your browser. Select a scenario or type your own. Hit "Convene Council".
+Open **http://localhost:8000** in your browser. Select a scenario or type your own. Hit **"Convene Council"**.
 
 ---
 
 ## Recommended Models
 
-### Production Setup (Best Results)
+### 🏢 Production Setup (Best Results)
 
 For serious decision support, use frontier models. The quality of deliberation is dramatically better.
 
@@ -143,9 +143,11 @@ For serious decision support, use frontier models. The quality of deliberation i
 | James Okafor | Anthropic | `claude-sonnet-4.6` | Fast, high-quality, cost-effective |
 | Elena Voronova | xAI | `grok-3` | Independent reasoning, contrarian perspectives |
 | Dr. Nakamura | OpenAI | `o3` | Superior reasoning for complex governance questions |
-| **Scoring Model** | Anthropic | `claude-sonnet-4.6` | Fast, accurate scoring at low cost |
+| **Scoring Model** | Anthropic | `claude-sonnet-4.6` | Best balance of reasoning depth and speed for evaluation |
 
-### Free Tier Setup (Getting Started)
+> 💡 **The scoring model is the most important model choice.** It evaluates every council member's response and generates the consensus/dissent analysis. A stronger scoring model produces dramatically more accurate and useful verdicts.
+
+### 🆓 Free Tier Setup (Getting Started)
 
 Start here. Zero cost, works out of the box.
 
@@ -167,11 +169,11 @@ Every council response is evaluated independently on five dimensions:
 
 | Dimension | What It Measures | Score Range |
 |:---|:---|:---:|
-| **Regulatory Defensibility** | Would this position hold up under regulatory scrutiny? | 1-10 |
-| **Practicality** | Can this be implemented with realistic resources? | 1-10 |
-| **Board-Readiness** | Could you present this to a board without caveats? | 1-10 |
-| **Specificity** | Concrete actions or just "conduct a risk assessment"? | 1-10 |
-| **Risk Quantification** | Does it frame risk in business terms? | 1-10 |
+| 📋 **Regulatory Defensibility** | Would this position hold up under regulatory scrutiny? | 1-10 |
+| 🔧 **Practicality** | Can this be implemented with realistic resources? | 1-10 |
+| 🏛️ **Board-Readiness** | Could you present this to a board without caveats? | 1-10 |
+| 🎯 **Specificity** | Concrete actions or just "conduct a risk assessment"? | 1-10 |
+| 📈 **Risk Quantification** | Does it frame risk in business terms? | 1-10 |
 
 ---
 
@@ -179,11 +181,11 @@ Every council response is evaluated independently on five dimensions:
 
 | Domain | Scenario | What It Tests |
 |:---|:---|:---|
-| **Incident Response** | Third-party vendor breach with customer data exposure | Notification timing, vendor management, board communication |
-| **Risk Acceptance** | Accepting residual risk in accelerated cloud migration | Risk thresholds, compensating controls, audit implications |
-| **AI Governance** | Deploying AI credit scoring model with known demographic bias | EU AI Act compliance, bias thresholds, phased deployment |
+| 🚨 **Incident Response** | Third-party vendor breach with customer data exposure | Notification timing, vendor management, board communication |
+| ⚖️ **Risk Acceptance** | Accepting residual risk in accelerated cloud migration | Risk thresholds, compensating controls, audit implications |
+| 🤖 **AI Governance** | Deploying AI credit scoring model with known demographic bias | EU AI Act compliance, bias thresholds, phased deployment |
 
-Plus: type **any cybersecurity dilemma** directly into the War Room's custom scenario input.
+**Plus:** type any cybersecurity dilemma directly into the War Room's custom scenario input.
 
 ---
 
@@ -191,14 +193,12 @@ Plus: type **any cybersecurity dilemma** directly into the War Room's custom sce
 
 | Principle | Implementation |
 |:---|:---|
-| **Keys stay local** | All API keys in `.env` only, never committed, never logged, never exported |
-| **Runs on localhost** | No public server, no external access |
-| **No telemetry** | Zero analytics, zero data collection, zero tracking |
-| **Clean exports** | PDF reports contain only scenario text and model responses, never credentials |
-| **Sanitised errors** | API keys are redacted from all error messages and logs |
-| **Gitignored** | `.env`, `config.yaml`, `outputs/`, `.claude/` are all blocked from git |
-
-See [SECURITY.md](.github/SECURITY.md) for the full security policy.
+| 🔑 **Keys stay local** | All API keys in `.env` only, never committed, never logged, never exported |
+| 🏠 **Runs on localhost** | No public server, no external access |
+| 📡 **No telemetry** | Zero analytics, zero data collection, zero tracking |
+| 📄 **Clean exports** | PDF reports contain only scenario text and model responses, never credentials |
+| 🛡️ **Sanitised errors** | API keys are redacted from all error messages and logs |
+| 🚫 **Gitignored** | `.env`, `config.yaml`, `outputs/`, `.claude/` are all blocked from git |
 
 ---
 
@@ -245,13 +245,25 @@ We welcome contributions, particularly new scenarios, new personas, and provider
 ---
 
 <p align="center">
-  <strong>If this helped you think about security decisions differently, give it a :star:</strong>
+  <img src="https://img.shields.io/badge/%E2%AD%90_Star_this_repo-if_it_helped_you_think_differently-7c3aed?style=for-the-badge" alt="Star this repo">
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/kunal-rk-a255aa301"><img src="https://img.shields.io/badge/Connect-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://github.com/KunalCyber/The-CISO-Council/stargazers"><img src="https://img.shields.io/github/stars/KunalCyber/The-CISO-Council?style=social" alt="Stars"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/KunalCyber/The-CISO-Council/network/members"><img src="https://img.shields.io/github/forks/KunalCyber/The-CISO-Council?style=social" alt="Forks"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/KunalCyber/The-CISO-Council/watchers"><img src="https://img.shields.io/github/watchers/KunalCyber/The-CISO-Council?style=social" alt="Watchers"></a>
 </p>
 
 <p align="center">
-  Built by <a href="https://www.linkedin.com/in/kunal-rk-a255aa301"><strong>Kunal RK</strong></a>
+  <a href="https://www.linkedin.com/in/kunal-rk-a255aa301"><img src="https://img.shields.io/badge/Connect_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/KunalCyber"><img src="https://img.shields.io/badge/Follow_on-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</p>
+
+<p align="center">
+  <strong>Built by <a href="https://www.linkedin.com/in/kunal-rk-a255aa301">Kunal RK</a></strong>
+  <br>
+  <sub>Taking the hardest security decisions and making them a council vote.</sub>
 </p>
