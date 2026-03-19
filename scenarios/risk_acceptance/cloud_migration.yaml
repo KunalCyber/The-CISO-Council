@@ -1,0 +1,52 @@
+title: "Accepting Residual Risk in an Accelerated Cloud Migration"
+domain: risk_acceptance
+
+context: |
+  Your organisation is migrating its core ERP and customer database from
+  on-premises infrastructure to a major cloud provider. The migration was
+  originally planned as an 18-month programme, but the CFO has pushed for
+  completion in 9 months to capture cost savings before the next fiscal year.
+
+  The security team's risk assessment has identified 14 high-severity findings
+  that cannot all be remediated within the compressed timeline. Six of these
+  relate to identity and access management gaps during the transition period,
+  four relate to data encryption at rest in the new environment, and four
+  relate to logging and monitoring blind spots during the cutover.
+
+  The cloud provider's shared responsibility model means your organisation
+  owns these gaps. The current on-premises environment also has known
+  vulnerabilities, but the team understands and monitors them.
+
+dilemma: |
+  The CISO recommends accepting the residual risk of 8 of the 14 findings
+  with compensating controls and a 90-day remediation plan post-migration.
+  The CFO wants to proceed on schedule. The Head of Internal Audit is
+  uncomfortable signing off on a risk acceptance with this many open
+  high-severity findings. Do you support the CISO's recommendation,
+  side with the auditor, or propose a different path?
+
+constraints:
+  - "9-month timeline is non-negotiable per CFO"
+  - "14 high-severity findings identified"
+  - "6 findings relate to IAM gaps during transition"
+  - "4 findings relate to encryption at rest"
+  - "4 findings relate to logging and monitoring gaps"
+  - "On-premises environment also has known vulnerabilities"
+  - "Cloud provider's shared responsibility model applies"
+  - "Annual cost saving of £2.4M if migration completes on schedule"
+
+stakeholders:
+  - "CFO (sponsor, timeline owner)"
+  - "CISO (risk acceptance recommender)"
+  - "Head of Internal Audit (assurance provider)"
+  - "Board risk committee"
+  - "IT operations team"
+  - "External auditors (annual audit in 4 months)"
+
+expected_dimensions:
+  - "Risk acceptance criteria and thresholds"
+  - "Compensating controls adequacy"
+  - "Board risk committee escalation"
+  - "External audit implications"
+  - "Phased migration as an alternative"
+  - "Quantified risk vs cost saving trade-off"

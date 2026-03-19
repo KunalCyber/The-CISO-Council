@@ -1,0 +1,128 @@
+# ============================================================
+# The CISO Council — Configuration
+# ============================================================
+# Copy this file to config.yaml and edit as needed.
+# NEVER commit config.yaml — it is gitignored.
+# ============================================================
+
+# ============================================================
+# FREE TIER SETUP (Active by default — works out of the box)
+# Start here. Upgrade to the production section when ready.
+# ============================================================
+
+council:
+  members:
+    - persona: ciso_fintech_startup
+      provider: google
+      model: gemini-2.5-flash
+      enabled: true
+
+    - persona: dpo_healthtech
+      provider: groq
+      model: llama-3.3-70b-versatile
+      enabled: true
+
+    - persona: cro_regulated_bank
+      provider: mistral
+      model: mistral-small-latest
+      enabled: true
+
+    - persona: internal_auditor_manufacturing
+      provider: groq
+      model: mixtral-8x7b-32768
+      enabled: true
+
+    - persona: ciso_enterprise_saas
+      provider: google
+      model: gemini-2.5-flash-lite-preview-06-17
+      enabled: true
+
+    - persona: ai_governance_lead
+      provider: cerebras
+      model: llama3.1-8b
+      enabled: true
+
+# ============================================================
+# PRODUCTION SETUP (Recommended — uncomment to activate)
+# Using frontier models produces significantly better council
+# deliberations. Each member reasons more deeply, gives more
+# specific recommendations, and the consensus/dissent analysis
+# becomes genuinely useful for real decision-making.
+# ============================================================
+
+# council:
+#   members:
+#     - persona: ciso_fintech_startup
+#       provider: anthropic
+#       model: claude-opus-4-5
+#       enabled: true
+#
+#     - persona: dpo_healthtech
+#       provider: openai
+#       model: gpt-4o
+#       enabled: true
+#
+#     - persona: cro_regulated_bank
+#       provider: google
+#       model: gemini-2.5-pro
+#       enabled: true
+#
+#     - persona: internal_auditor_manufacturing
+#       provider: anthropic
+#       model: claude-sonnet-4-5
+#       enabled: true
+#
+#     - persona: ciso_enterprise_saas
+#       provider: xai
+#       model: grok-3
+#       enabled: true
+#
+#     - persona: ai_governance_lead
+#       provider: openai
+#       model: o3
+#       enabled: true
+
+# ============================================================
+# Scoring model — evaluates each council response
+# ============================================================
+scoring:
+  provider: google
+  model: gemini-2.5-flash
+  dimensions:
+    - regulatory_defensibility
+    - practicality
+    - board_readiness
+    - specificity
+    - risk_quantification
+
+# ============================================================
+# Rate limiting (requests per minute per provider)
+# Tune these to stay within free tier limits.
+# ============================================================
+rate_limits:
+  google: 5
+  groq: 20
+  mistral: 5
+  openrouter: 10
+  openai: 3
+  anthropic: 5
+  xai: 10
+  deepseek: 5
+  cerebras: 10
+
+# ============================================================
+# Output settings
+# ============================================================
+output:
+  format: both          # markdown, json, or both
+  directory: outputs
+  include_raw: true
+  include_scores: true
+
+# ============================================================
+# Session settings
+# ============================================================
+session:
+  timeout: 120          # seconds per model call
+  retries: 3
+  concurrent: false     # set true only if your rate limits allow it

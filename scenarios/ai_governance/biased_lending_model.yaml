@@ -1,0 +1,49 @@
+title: "Deploying an AI Model with Known Bias in Lending Decisions"
+domain: ai_governance
+
+context: |
+  Your organisation is a mid-size digital lender preparing to deploy an
+  AI-driven credit scoring model. Internal testing has revealed a statistically
+  significant bias: the model approves applications from certain demographic
+  groups at a 12% lower rate than others, even when controlling for credit
+  history and income. The data science team says this reflects historical
+  patterns in the training data and that "no model is perfectly fair."
+
+  The model otherwise outperforms your current rules-based system by 23% in
+  default prediction accuracy. The product team has committed to a Q2 launch
+  date, and the CEO has told investors this capability is coming. Your
+  organisation operates in the EU and is subject to the EU AI Act's
+  requirements for high-risk AI systems in credit scoring.
+
+dilemma: |
+  The product team wants to deploy with a post-launch monitoring plan to
+  address bias over time. The legal team is concerned about EU AI Act
+  compliance and potential discrimination claims. The data science team says
+  they can reduce bias by 40% with three more months of work, but cannot
+  eliminate it entirely. Do you approve the deployment, delay it, or take
+  a different approach entirely?
+
+constraints:
+  - "EU AI Act classifies credit scoring AI as high-risk"
+  - "12% approval rate disparity across demographic groups"
+  - "23% improvement in default prediction vs current system"
+  - "CEO has publicly committed to Q2 launch"
+  - "Three-month delay could reduce bias by 40% but not eliminate it"
+  - "No established internal AI governance framework yet"
+  - "Competitors are already using similar AI models"
+
+stakeholders:
+  - "Loan applicants (particularly affected demographic groups)"
+  - "Board of directors and investors"
+  - "EU regulatory authorities"
+  - "Data science and product teams"
+  - "Legal and compliance teams"
+  - "CEO"
+
+expected_dimensions:
+  - "EU AI Act high-risk system requirements"
+  - "Bias measurement and acceptable thresholds"
+  - "Phased deployment vs full launch"
+  - "Board and investor communication"
+  - "Documentation and conformity assessment"
+  - "Post-deployment monitoring obligations"

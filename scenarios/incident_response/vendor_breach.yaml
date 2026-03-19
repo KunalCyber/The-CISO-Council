@@ -1,0 +1,47 @@
+title: "Third-Party Vendor Breach with Customer Data Exposure"
+domain: incident_response
+
+context: |
+  Your organisation uses a SaaS vendor for customer onboarding and identity
+  verification. The vendor disclosed a breach 48 hours ago affecting their
+  infrastructure. They have confirmed that data belonging to your customers
+  was "potentially accessed," but cannot confirm the exact scope. The vendor's
+  incident response has been slow: their first communication was a generic
+  email to all clients, and your direct contact has gone silent.
+
+  Your contract includes a 72-hour breach notification clause, a right-to-audit
+  provision, and a liability cap of 12 months of fees (approximately £180,000).
+  You process data for 40,000 customers through this vendor, including names,
+  email addresses, dates of birth, and government ID numbers.
+
+dilemma: |
+  You have 24 hours before your own regulatory notification obligations may be
+  triggered. The vendor cannot confirm scope. Your board chair is asking for
+  a status update by end of day. Your legal team says to wait for more
+  information before notifying regulators. Your CISO says to notify now and
+  control the narrative. What do you recommend, and how do you handle the
+  next 48 hours?
+
+constraints:
+  - "72-hour GDPR notification window may already be running"
+  - "Vendor is unresponsive and cannot confirm breach scope"
+  - "Board expects a status update within 8 hours"
+  - "Liability cap limits financial recovery to £180,000"
+  - "40,000 customer records potentially exposed, including government IDs"
+  - "You have no independent forensic access to the vendor's systems"
+
+stakeholders:
+  - "40,000 affected customers"
+  - "Board of directors"
+  - "Data protection authority (ICO or equivalent)"
+  - "Legal counsel"
+  - "The breached vendor"
+  - "Cyber insurance provider"
+
+expected_dimensions:
+  - "Regulatory notification timing and strategy"
+  - "Vendor management and contractual enforcement"
+  - "Customer communication approach"
+  - "Board communication framing"
+  - "Evidence preservation and forensic access"
+  - "Insurance notification requirements"
