@@ -161,6 +161,30 @@ Start here. Zero cost, works out of the box.
 | Dr. Nakamura | Cerebras | `llama3.1-8b` | Free |
 | **Scoring Model** | Google | `gemini-2.5-flash` | Free |
 
+### 🔄 Switching to Production
+
+1. Get API keys from the providers you need:
+
+| Provider | What You Get | Sign Up |
+|:---|:---|:---|
+| Anthropic | Claude Opus 4, Claude Sonnet 4.6 | [console.anthropic.com](https://console.anthropic.com/) |
+| OpenAI | GPT-4o, o3 | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) |
+| xAI | Grok-3 | [console.x.ai](https://console.x.ai/) |
+| Google | Gemini 2.5 Pro (same key from free tier) | Already set up |
+
+2. Add the new keys to your `.env`:
+```bash
+ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY=sk-...
+XAI_API_KEY=xai-...
+GOOGLE_API_KEY=already set from free tier
+```
+
+3. Edit `config.yaml`: comment out the free tier section and uncomment the production section. Both blocks are ready in the file, just swap which one is active.
+
+4. Restart: `python -m council serve`
+
+> 💡 **You can mix and match.** Use frontier models for 3 seats and free models for the other 3. Use a paid scoring model with free council members. Any combination works.
 ---
 
 ## Scoring Dimensions
