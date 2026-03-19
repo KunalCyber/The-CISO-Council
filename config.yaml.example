@@ -34,7 +34,7 @@ council:
 
     - persona: ciso_enterprise_saas
       provider: google
-      model: gemini-2.5-flash-lite-preview-06-17
+      model: gemini-2.5-flash-lite
       enabled: true
 
     - persona: ai_governance_lead
@@ -54,7 +54,7 @@ council:
 #   members:
 #     - persona: ciso_fintech_startup
 #       provider: anthropic
-#       model: claude-opus-4-5
+#       model: claude-opus-4
 #       enabled: true
 #
 #     - persona: dpo_healthtech
@@ -69,7 +69,7 @@ council:
 #
 #     - persona: internal_auditor_manufacturing
 #       provider: anthropic
-#       model: claude-sonnet-4-5
+#       model: claude-sonnet-4.6
 #       enabled: true
 #
 #     - persona: ciso_enterprise_saas
