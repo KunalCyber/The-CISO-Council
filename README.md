@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KunalCyber/The-CISO-Council/main/static/council-hero.png" alt="The CISO Council" width="800">
+  <img src="https://raw.githubusercontent.com/KunalCyber/The-CISO-Council/main/static/landing-page.png" alt="The CISO Council" width="800">
 </p>
 
 <h1 align="center">The CISO Council</h1>
