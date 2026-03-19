@@ -1,288 +1,257 @@
-# The CISO Council
+<p align="center">
+  <img src="static/council-hero.png" alt="The CISO Council - Six AI security leaders around a holographic war table" width="800">
+</p>
 
-**A virtual council of AI models that debate real cybersecurity dilemmas.**
+<h1 align="center">The CISO Council</h1>
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <strong>Can't afford a 7-figure CISO? Assemble a 6-member AI security council instead.</strong>
+</p>
 
-Inspired by [Karpathy's LLM Council](https://github.com/karpathy/llm-council). Built for security professionals who make decisions under ambiguity every day.
+<p align="center">
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/Cost-%240-brightgreen?style=for-the-badge" alt="Zero Cost">
+  <img src="https://img.shields.io/badge/AI%20Models-6-7c3aed?style=for-the-badge" alt="6 Models">
+  <a href="https://github.com/karpathy/llm-council"><img src="https://img.shields.io/badge/Inspired%20by-Karpathy's%20LLM%20Council-orange?style=for-the-badge" alt="Inspired by Karpathy"></a>
+</p>
 
----
-
-## The Problem
-
-Security decisions are rarely black and white.
-
-Should you notify the regulator now or wait for more information? When a vendor fails their SOC 2, do you terminate the contract or work with them? Your AI model has a measurable bias, but it outperforms the current system by 23%: do you deploy? Your red team found a critical path to production, but patching it requires a three-week freeze: what is your position to the board?
-
-These are judgement calls. They depend on your risk appetite, your organisational context, your regulatory exposure, and what your board will tolerate. There is no single right answer, and the consequences of getting it wrong are real.
-
-Most "AI for security" tools automate the easy parts: policy generation, control mapping, compliance checklists. The CISO Council tackles the hard part: **decision-making under ambiguity**.
-
-## What It Does
-
-The CISO Council assembles 6 large language models, each embodying a distinct security leadership persona, feeds them the same scenario, and produces a structured council report.
-
-```
-SCENARIO
-  "Your vendor disclosed a breach. 40,000 customer records potentially
-   exposed. You have 24 hours before regulatory notification is triggered..."
-        │
-        ├──→  Divya Sharma, CISO (Fintech Startup)         ← Claude / Gemini
-        ├──→  Marcus Chen, DPO (Healthtech)                ← GPT-4o / Llama
-        ├──→  Sarah Al-Rashid, CRO (Regulated Bank)        ← Gemini / Mistral
-        ├──→  James Okafor, Head of Internal Audit         ← Claude / Mixtral
-        ├──→  Elena Voronova, CISO (Enterprise SaaS)       ← Grok / Gemini
-        └──→  Dr. Tomoko Nakamura, Head of AI Governance   ← o3 / Cerebras
-                │
-                ▼
-        SCORING ENGINE (5 dimensions × 6 responses)
-                │
-                ▼
-        COUNCIL REPORT
-        ✓ Consensus positions
-        ✗ Dissenting views
-        △ Ambiguity analysis
-        ◆ Chief Arbiter recommendation
-        ↓ Exportable PDF
-```
-
-## Who This Is For
-
-This tool is for anyone who makes security decisions:
-
-- **CISOs and security leaders** pressure-testing decisions before the board does it for you
-- **Risk managers** who need to see how different risk appetites frame the same problem
-- **Security architects** stress-testing a design decision against multiple professional perspectives
-- **Incident responders** thinking through response options under time pressure
-- **Compliance and privacy teams** navigating regulatory ambiguity
-- **Penetration testers and consultants** preparing findings and remediation recommendations
-- **Security teams** looking to surface blind spots and challenge groupthink
-- **Students and early-career practitioners** learning how experienced security leaders reason differently about the same problem
+<p align="center">
+  <a href="#quick-start">Quick Start</a> &bull;
+  <a href="#how-it-works">How It Works</a> &bull;
+  <a href="#the-council">The Council</a> &bull;
+  <a href="#recommended-models">Models</a> &bull;
+  <a href="#security">Security</a> &bull;
+  <a href="https://www.linkedin.com/in/kunal-rk-a255aa301">Connect on LinkedIn</a>
+</p>
 
 ---
 
-## What Makes the Personas Different
+## The Idea
 
-These are not tone adjustments. Each persona has structured attributes that shape its reasoning:
+Instead of asking a security question to your favourite LLM, you assemble a **council of six AI models**, each embodying a distinct cybersecurity leadership persona with their own risk appetite, organisational context, and regulatory lens. Your query goes to all six independently, a scoring engine evaluates each response across five dimensions, and a **Chief Arbiter** synthesises the final verdict.
 
-| Attribute | Effect |
-|---|---|
-| **Risk appetite** (1-5) | Shapes whether they default to caution or action |
-| **Organisational context** | Sector, size, and maturity determine what is realistic |
-| **Regulatory lens** | Which frameworks they instinctively reference |
-| **Decision style** | Data-driven, compliance-first, cost-optimised, pragmatic |
+Here is what happens when you submit a scenario:
 
-A startup CISO with a risk appetite of 4 will reason differently about the same breach than a bank CRO with an appetite of 1. That difference is the point.
+**Stage 1: Independent Deliberation.** Your cybersecurity dilemma is given to all 6 council members individually. Each responds from their persona's perspective: a startup CISO reasons differently from a bank CRO, a DPO prioritises differently from a Head of Internal Audit.
 
-## How Responses Are Scored
+**Stage 2: Multi-Dimensional Scoring.** Each response is scored by a separate model across five dimensions: Regulatory Defensibility, Practicality, Board-Readiness, Specificity, and Risk Quantification. No self-grading: the scoring model is independent of the council members.
 
-Every response is evaluated by a separate scoring model on five dimensions:
+**Stage 3: Consensus and Dissent.** The Chief Arbiter analyses all scored responses and identifies where the council agrees, where they split, and what those disagreements reveal about the decision's inherent ambiguity.
 
-| Dimension | What It Measures |
-|---|---|
-| **Regulatory Defensibility** | Would this hold up under regulatory scrutiny? |
-| **Practicality** | Can this be implemented with realistic resources? |
-| **Board-Readiness** | Could you present this to a board without caveats? |
-| **Specificity** | Concrete actions or just "conduct a risk assessment"? |
-| **Risk Quantification** | Does it frame risk in business terms? |
+**Stage 4: Board-Ready Report.** Export a clean PDF report with the full council deliberation, individual scores, consensus positions, dissenting views, and the Chief Arbiter's recommendation.
+
+> **This is not a chatbot. It is a cybersecurity advisory board that runs on localhost.**
 
 ---
 
-## Quickstart
+## The War Room
 
-### 1. Clone and Install
+The CISO Council runs as a local web application with a dark, command-centre-style interface. Select a pre-built scenario or type your own cybersecurity dilemma, hit "Convene Council", and watch six AI security leaders deliberate in real time.
+
+<p align="center"><em>Run it locally to experience the full War Room interface.</em></p>
+
+### Features
+
+| Feature | Description |
+|:---|:---|
+| **6 AI Personas** | Each with distinct risk appetite, org context, and regulatory lens |
+| **Multi-Model** | Uses different AI models from different providers for genuine diversity |
+| **5-Dimension Scoring** | Regulatory Defensibility, Practicality, Board-Readiness, Specificity, Risk Quantification |
+| **Chief Arbiter** | Independent model synthesises the final verdict from all responses |
+| **Consensus/Dissent** | Identifies where the council agrees and where they split |
+| **Ambiguity Analysis** | Reveals what disagreements tell you about the decision's complexity |
+| **Custom Scenarios** | Type any cybersecurity dilemma directly into the War Room |
+| **PDF Export** | Board-ready report with full deliberation, scores, and recommendations |
+| **Zero Cost** | Runs entirely on free-tier API keys |
+| **Fully Local** | Nothing leaves your machine except API calls to your configured providers |
+
+---
+
+## The Council
+
+Six personas, each with a different risk appetite, organisational context, and decision-making style.
+
+| | Name | Role | Sector | Risk Appetite | Regulatory Focus |
+|:---:|:---|:---|:---|:---|:---|
+| :purple_circle: | **Divya Sharma** | CISO | Fintech Startup | :red_square::red_square::red_square::red_square::white_large_square: Tolerant | SOC 2, PCI DSS, GDPR, DPDP |
+| :green_circle: | **Marcus Chen** | Data Protection Officer | Healthtech | :green_square::green_square::white_large_square::white_large_square::white_large_square: Conservative | GDPR, EU AI Act, NIS2, ISO 27701 |
+| :large_blue_circle: | **Sarah Al-Rashid** | Chief Risk Officer | Banking | :green_square::white_large_square::white_large_square::white_large_square::white_large_square: Ultra-Conservative | Basel III, DORA, SOX, ISO 31000 |
+| :yellow_circle: | **James Okafor** | Head of Internal Audit | Manufacturing | :orange_square::orange_square::orange_square::white_large_square::white_large_square: Moderate | ISO 27001, NIST CSF, SOC 2, COBIT |
+| :white_circle: | **Elena Voronova** | CISO | Enterprise SaaS | :orange_square::orange_square::orange_square::white_large_square::white_large_square: Moderate | SOC 2, ISO 27001, FedRAMP, NIST 800-53 |
+| :red_circle: | **Dr. Tomoko Nakamura** | Head of AI Governance | Technology | :green_square::green_square::white_large_square::white_large_square::white_large_square: Conservative | EU AI Act, ISO 42001, NIST AI RMF |
+
+---
+
+## Quick Start
+
+### 1. Clone
 
 ```bash
-git clone https://github.com/kunalrk/the-ciso-council.git
-cd the-ciso-council
+git clone https://github.com/KunalCyber/The-CISO-Council.git
+cd The-CISO-Council
+```
+
+### 2. Install
+
+```bash
 python -m venv venv
 source venv/bin/activate        # macOS/Linux
-venv\Scripts\activate           # Windows
+# venv\Scripts\activate         # Windows
 pip install -r requirements.txt
 ```
 
-### 2. Configure Keys and Council
+### 3. Get Free API Keys
+
+| Provider | Free Tier | Get Your Key |
+|:---|:---|:---|
+| **Google AI Studio** | ~500 requests/day | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
+| **Groq** | 14,400 requests/day | [console.groq.com/keys](https://console.groq.com/keys) |
+| **Mistral** | 1B tokens/month | [console.mistral.ai/api-keys](https://console.mistral.ai/api-keys) |
+| **Cerebras** | Generous free tier | [cloud.cerebras.ai](https://cloud.cerebras.ai) |
+
+> You only need **2 providers minimum** to run a council session. Start with Google and Groq.
+
+### 4. Configure
 
 ```bash
-cp .env.example .env
+cp .env.example .env        # Add your API keys
 cp config.yaml.example config.yaml
 ```
 
-Open `.env` and add your API keys. Open `config.yaml` to choose which models each persona uses. The defaults use free tiers only.
-
-### 3. Launch the War Room
+### 5. Launch the War Room
 
 ```bash
 python -m council serve
 ```
 
-Open [http://localhost:8000](http://localhost:8000) in your browser.
-
-### 4. Or Run via CLI
-
-```bash
-python -m council --scenario scenarios/incident_response/vendor_breach.yaml
-```
+Open **http://localhost:8000** in your browser. Select a scenario or type your own. Hit "Convene Council".
 
 ---
 
-## Model Configuration
+## Recommended Models
 
-### Recommended (Production)
+### Production Setup (Best Results)
 
-Using frontier models produces significantly better council deliberations. Each member reasons more deeply, gives more specific recommendations, and the consensus/dissent analysis becomes genuinely useful for real decision-making.
+For serious decision support, use frontier models. The quality of deliberation is dramatically better.
 
 | Council Seat | Provider | Model | Why |
-|---|---|---|---|
-| Divya Sharma (CISO) | Anthropic | claude-opus-4-5 | Deepest reasoning, most nuanced analysis |
-| Marcus Chen (DPO) | OpenAI | gpt-4o | Strong regulatory knowledge, structured output |
-| Sarah Al-Rashid (CRO) | Google | gemini-2.5-pro | Excellent quantitative reasoning, large context |
-| James Okafor (Auditor) | Anthropic | claude-sonnet-4-5 | Fast, high-quality, cost-effective |
-| Elena Voronova (CISO) | xAI | grok-3 | Independent reasoning, contrarian perspectives |
-| Dr. Nakamura (AI Gov) | OpenAI | o3 | Superior reasoning for complex governance questions |
-| Scoring Model | Google | gemini-2.5-flash | Fast, accurate scoring at low cost |
+|:---|:---|:---|:---|
+| Divya Sharma | Anthropic | `claude-opus-4` | Deepest reasoning, most nuanced analysis |
+| Marcus Chen | OpenAI | `gpt-4o` | Strong regulatory knowledge, structured output |
+| Sarah Al-Rashid | Google | `gemini-2.5-pro` | Excellent quantitative reasoning, large context |
+| James Okafor | Anthropic | `claude-sonnet-4.6` | Fast, high-quality, cost-effective |
+| Elena Voronova | xAI | `grok-3` | Independent reasoning, contrarian perspectives |
+| Dr. Nakamura | OpenAI | `o3` | Superior reasoning for complex governance questions |
+| **Scoring Model** | Google | `gemini-2.5-flash` | Fast, accurate scoring at low cost |
 
-To activate: get API keys for the providers above, add them to `.env`, then uncomment the production section in `config.yaml`.
+### Free Tier Setup (Getting Started)
 
-### Free Tier (Getting Started)
-
-Start here to test the platform. When you see the value, upgrade to production models.
+Start here. Zero cost, works out of the box.
 
 | Council Seat | Provider | Model | Cost |
-|---|---|---|---|
-| Divya Sharma (CISO) | Google | gemini-2.5-flash | Free |
-| Marcus Chen (DPO) | Groq | llama-3.3-70b | Free |
-| Sarah Al-Rashid (CRO) | Mistral | mistral-small-latest | Free |
-| James Okafor (Auditor) | Groq | mixtral-8x7b | Free |
-| Elena Voronova (CISO) | Google | gemini-2.5-flash-lite | Free |
-| Dr. Nakamura (AI Gov) | Cerebras | llama3.1-8b | Free |
-| Scoring Model | Google | gemini-2.5-flash | Free |
-
-> You do not need all providers. The council runs with as few as two. Start with Google (easiest free tier) and add others as needed.
-
-### Supported Providers
-
-| Provider | Env Var | Notes |
-|---|---|---|
-| Google Gemini | `GOOGLE_API_KEY` | Free tier, also default scoring model |
-| Anthropic | `ANTHROPIC_API_KEY` | Claude Opus, Sonnet, Haiku |
-| OpenAI | `OPENAI_API_KEY` | GPT-4o, o3 |
-| xAI | `XAI_API_KEY` | Grok-3 |
-| Groq | `GROQ_API_KEY` | Fast Llama/Mixtral inference |
-| Mistral | `MISTRAL_API_KEY` | 1B tokens/month free |
-| OpenRouter | `OPENROUTER_API_KEY` | 24+ free models via one key |
-| DeepSeek | `DEEPSEEK_API_KEY` | Strong reasoning |
-| Cerebras | `CEREBRAS_API_KEY` | Fast Llama inference |
+|:---|:---|:---|:---|
+| Divya Sharma | Google | `gemini-2.5-flash` | Free |
+| Marcus Chen | Groq | `llama-3.3-70b-versatile` | Free |
+| Sarah Al-Rashid | Mistral | `mistral-small-latest` | Free |
+| James Okafor | Groq | `mixtral-8x7b-32768` | Free |
+| Elena Voronova | Google | `gemini-2.5-flash-lite` | Free |
+| Dr. Nakamura | Cerebras | `llama3.1-8b` | Free |
+| **Scoring Model** | Google | `gemini-2.5-flash` | Free |
 
 ---
 
-## Available Scenarios
+## Scoring Dimensions
 
-### Incident Response
-- **Vendor Breach** — Third-party breach with 40,000 customer records exposed, 72-hour notification clock running
+Every council response is evaluated independently on five dimensions:
 
-### Risk Acceptance
-- **Cloud Migration** — Accepting residual risk in an accelerated migration with 14 open high-severity findings
-
-### AI Governance
-- **Biased Lending Model** — Deploying an AI credit scoring model with known demographic bias under EU AI Act scrutiny
-
-*More scenarios across vulnerability disclosure, ransomware response, insider threat, and board reporting are in development. Contributions welcome.*
+| Dimension | What It Measures | Score Range |
+|:---|:---|:---:|
+| **Regulatory Defensibility** | Would this position hold up under regulatory scrutiny? | 1-10 |
+| **Practicality** | Can this be implemented with realistic resources? | 1-10 |
+| **Board-Readiness** | Could you present this to a board without caveats? | 1-10 |
+| **Specificity** | Concrete actions or just "conduct a risk assessment"? | 1-10 |
+| **Risk Quantification** | Does it frame risk in business terms? | 1-10 |
 
 ---
 
-## CLI Reference
+## Built-in Scenarios
 
-```bash
-# Run a specific scenario
-python -m council --scenario <path_to_yaml>
+| Domain | Scenario | What It Tests |
+|:---|:---|:---|
+| **Incident Response** | Third-party vendor breach with customer data exposure | Notification timing, vendor management, board communication |
+| **Risk Acceptance** | Accepting residual risk in accelerated cloud migration | Risk thresholds, compensating controls, audit implications |
+| **AI Governance** | Deploying AI credit scoring model with known demographic bias | EU AI Act compliance, bias thresholds, phased deployment |
 
-# Run with specific council members only
-python -m council --scenario <path> --members ciso_fintech_startup,dpo_healthtech
+Plus: type **any cybersecurity dilemma** directly into the War Room's custom scenario input.
 
-# Validate all scenario files
-python -m council validate
+---
 
-# List available personas
-python -m council personas
+## Security
 
-# List available scenarios
-python -m council scenarios
-```
+| Principle | Implementation |
+|:---|:---|
+| **Keys stay local** | All API keys in `.env` only, never committed, never logged, never exported |
+| **Runs on localhost** | No public server, no external access |
+| **No telemetry** | Zero analytics, zero data collection, zero tracking |
+| **Clean exports** | PDF reports contain only scenario text and model responses, never credentials |
+| **Sanitised errors** | API keys are redacted from all error messages and logs |
+| **Gitignored** | `.env`, `config.yaml`, `outputs/`, `.claude/` are all blocked from git |
+
+See [SECURITY.md](.github/SECURITY.md) for the full security policy.
 
 ---
 
 ## Project Structure
 
 ```
-the-ciso-council/
+The-CISO-Council/
 ├── council/
-│   ├── __init__.py
-│   ├── __main__.py       # Module entry point
-│   ├── cli.py            # CLI interface
-│   ├── config.py         # Configuration loader
-│   ├── models.py         # Pydantic data models
-│   ├── personas.py       # Council member definitions
-│   ├── pdf_report.py     # PDF export engine
-│   ├── prompts.py        # System prompts and scoring rubrics
-│   ├── providers.py      # LLM provider abstraction
-│   ├── report.py         # Report generator and consensus analysis
-│   ├── scenarios.py      # Scenario loader and validator
-│   ├── scoring.py        # Multi-dimensional scoring engine
-│   ├── server.py         # FastAPI server (War Room UI)
-│   └── session.py        # Council session orchestrator
-├── scenarios/
-│   ├── incident_response/
-│   ├── risk_acceptance/
-│   ├── ai_governance/
-│   └── ...
-├── static/               # War Room web UI
-├── outputs/              # Generated reports (gitignored)
-├── tests/
-├── .env.example          # API key template
-└── config.yaml.example   # Council config template
+│   ├── cli.py              # CLI with serve command
+│   ├── config.py           # Configuration loader
+│   ├── models.py           # Pydantic data models
+│   ├── personas.py         # 6 council member definitions
+│   ├── prompts.py          # System prompts and scoring rubrics
+│   ├── providers.py        # Multi-provider LLM abstraction
+│   ├── scoring.py          # 5-dimension scoring engine
+│   ├── session.py          # Council session orchestrator
+│   ├── report.py           # Report generator
+│   ├── pdf_report.py       # Board-ready PDF export
+│   └── server.py           # FastAPI server (War Room backend)
+├── static/
+│   ├── index.html          # War Room frontend
+│   └── council-hero.png    # Landing page hero image
+├── scenarios/              # YAML scenario bank
+├── outputs/                # Generated reports (gitignored)
+├── docs/                   # Write-up and documentation
+├── .env.example            # API key template
+├── config.yaml.example     # Council configuration template
+├── requirements.txt
+└── CLAUDE.md               # Project context for Claude Code
 ```
-
----
-
-## Security
-
-All API keys stay local. Nothing is logged, transmitted, or exported.
-
-- Keys live in `.env` only (gitignored, never committed)
-- The provider layer sanitises all error messages to remove key patterns before logging
-- Output files (including PDFs) contain scenario text and model responses only, never credentials
-- The server runs on localhost only and includes CORS restrictions
-- No telemetry, no analytics, no data collection of any kind
-- The `.gitignore` blocks all sensitive files, output reports, and the `.claude/` directory
-
-If you accidentally expose a key, regenerate it immediately at the provider's console.
-
-See [.github/SECURITY.md](.github/SECURITY.md) for the full security policy.
 
 ---
 
 ## Contributing
 
-Contributions are welcome, particularly:
-
-- **New scenarios** — Real-world security dilemmas across any domain. See [CONTRIBUTING.md](CONTRIBUTING.md).
-- **New personas** — Different sectors, regions, or leadership roles.
-- **Provider integrations** — Additional LLM providers.
-- **Scoring improvements** — Better rubrics or evaluation methods.
+We welcome contributions, particularly new scenarios, new personas, and provider integrations. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-## How It Was Built
+## Inspired By
 
-This project was built using [Claude Code](https://claude.ai/code), Anthropic's terminal-based coding agent. The `CLAUDE.md` file provides project context that makes Claude Code sessions productive from the first prompt.
-
-```bash
-cd the-ciso-council
-claude
-```
+[Andrej Karpathy's LLM Council](https://github.com/karpathy/llm-council) for the original concept of assembling multiple LLMs to deliberate on hard questions. The CISO Council takes that idea and builds it into a complete cybersecurity decision-support tool with personas, scoring, consensus analysis, and board-ready exports.
 
 ---
 
-**Built by [Kunal RK](https://www.linkedin.com/in/kunal-rk-a255aa301/)**
+<p align="center">
+  <strong>If this helped you think about security decisions differently, give it a :star:</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/kunal-rk-a255aa301"><img src="https://img.shields.io/badge/Connect-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+</p>
+
+<p align="center">
+  Built by <a href="https://www.linkedin.com/in/kunal-rk-a255aa301"><strong>Kunal RK</strong></a>
+</p>
