@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/council-hero.png" alt="The CISO Council - Six AI security leaders around a holographic war table" width="800">
+  <img src="docs/screenshots/landing-page.png" alt="The CISO Council War Room" width="900">
 </p>
 
 <h1 align="center">The CISO Council</h1>
